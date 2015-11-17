@@ -15,6 +15,7 @@ public class Dijkstra {
       new Graph.Edge("c", "f", 2),
       new Graph.Edge("d", "e", 6),
       new Graph.Edge("e", "f", 9),
+      new Graph.Edge("e", "f", 8),
    };
    private static final String START = "a";
    private static final String END = "e";
