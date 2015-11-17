@@ -6,18 +6,26 @@ import java.util.*;
  
 public class Dijkstra {
    private static final Graph.Edge[] GRAPH = {
-      new Graph.Edge("a", "b", 7),
-      new Graph.Edge("a", "c", 9),
-      new Graph.Edge("a", "f", 14),
-      new Graph.Edge("b", "c", 10),
-      new Graph.Edge("b", "d", 15),
-      new Graph.Edge("c", "d", 11),
-      new Graph.Edge("c", "f", 2),
-      new Graph.Edge("d", "e", 6),
-      new Graph.Edge("e", "f", 9),
+      new Graph.Edge("1 - Acesso Terminal", "2 - Biblioteca", 5),
+      new Graph.Edge("1 - Acesso Terminal", "5 - Estacionamento I", 2),
+      new Graph.Edge("2 - Biblioteca", "3 - CENTAC", 2),
+      new Graph.Edge("2 - Biblioteca", "6 - BlocosAntigos", 10),
+      new Graph.Edge("2 - Biblioteca", "5 - Estacionamento I", 2),
+      new Graph.Edge("2 - Biblioteca", "12 - Estacionamento II", 3),
+      new Graph.Edge("3 - Centac", "7 - Cantina", 3),
+      new Graph.Edge("3 - Centac", "12 - Estacionamento II", 1),
+      new Graph.Edge("3 - Centac", "4 - Bloco XXIA", 1),
+      new Graph.Edge("3 - Centac", "2 - Biblioteca", 2),
+      new Graph.Edge("3 - Centac", "6 - BlocosAntigos", 3),
+      new Graph.Edge("4 - Bloco XXIA", "12 - Estacionamento II", 2),
+      new Graph.Edge("4 - Bloco XXIA", "3 - Centac", 1),
+      new Graph.Edge("4 - Bloco XXIA", "7 - Cantina", 1),
+      new Graph.Edge("4 - Bloco XXIA", "8 - Cap", 1),
+       new Graph.Edge("4 - Bloco XXIA", "9 - Ginásio", 1),
+       
    };
-   private static final String START = "a";
-   private static final String END = "e";
+   private static final String START = "2 - Biblioteca";
+   private static final String END = "4 - Bloco XXIA";
  
    public static void main(String[] args) {
       Graph g = new Graph(GRAPH);
@@ -87,7 +95,7 @@ class Graph {
  
    /** Runs dijkstra using a specified source vertex */ 
    public void dijkstra(String startName) {
-      if (!graph.containsKey(startName)) {
+      if (!graph.containsKey(startName)) {01
          System.err.printf("Graph doesn't contain start vertex \"%s\"\n", startName);
          return;
       }
