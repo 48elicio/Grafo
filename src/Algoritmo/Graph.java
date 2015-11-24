@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Grafico;
+package Algoritmo;
 
 import Algoritmo.Dijkstra;
 import java.util.HashMap;
@@ -19,17 +19,6 @@ import javax.swing.JOptionPane;
 
 public class Graph {
    private final Map<String, Vertex> graph; // mapping of vertex names to Vertex objects, built from a set of Edges
- 
-   /** One edge of the graph (only used by Graph constructor) */
-   public static class Edge {
-      public final String v1, v2;
-      public final int dist;
-      public Edge(String v1, String v2, int dist) {
-         this.v1 = v1;
-         this.v2 = v2;
-         this.dist = dist;
-      }
-   }
  
    /** One vertex of the graph, complete with mappings to neighbouring vertices */
    public static class Vertex implements Comparable<Vertex> {
@@ -54,9 +43,7 @@ public class Graph {
             mensagem += " "+this.previous.printPath()+" ";
             System.out.printf(" -> %s(%d)", this.name, this.dist);
             mensagem += (
-                            this.name.equals(Dijkstra.END)
-                             ? " Ponto de chegada "+this.name 
-                             : " Passa por: "+this.name +""
+                             " Passa por: "+this.name +""
                         )+ " Tempo estimado ("+this.dist+")\n";
          }
          

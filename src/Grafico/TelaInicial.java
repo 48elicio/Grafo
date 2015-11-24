@@ -1,8 +1,7 @@
 package Grafico;
 
+import Algoritmo.Graph;
 import Algoritmo.Dijkstra;
-import static Algoritmo.Dijkstra.END;
-import static Algoritmo.Dijkstra.START;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -102,29 +101,14 @@ public class TelaInicial extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-       new ActionListener() {
-
-           @Override
-           public void actionPerformed(ActionEvent e)
-           {
-            Dijkstra.END = (String)jComboBox2.getSelectedItem();  
-           }
-       };
+      
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-        new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               Dijkstra.START = (String)jComboBox1.getSelectedItem();   
-            }
-        };
+       
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
        Graph g = new Graph(Dijkstra.GRAPH) {};
       g.dijkstra((String)jComboBox1.getSelectedItem());
       g.printPath((String)jComboBox2.getSelectedItem());
